@@ -1,0 +1,296 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D3BE9CCD1552CF2B00ED0FDF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BE9CCC1552CF2B00ED0FDF /* UIKit.framework */; };
+		D3BE9CCF1552CF2B00ED0FDF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BE9CCE1552CF2B00ED0FDF /* Foundation.framework */; };
+		D3BE9CD11552CF2B00ED0FDF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BE9CD01552CF2B00ED0FDF /* CoreGraphics.framework */; };
+		D3BE9CD71552CF2B00ED0FDF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3BE9CD51552CF2B00ED0FDF /* InfoPlist.strings */; };
+		D3BE9CD91552CF2B00ED0FDF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BE9CD81552CF2B00ED0FDF /* main.m */; };
+		D3BE9CDD1552CF2B00ED0FDF /* KGAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BE9CDC1552CF2B00ED0FDF /* KGAAppDelegate.m */; };
+		D3BE9CE01552CF2B00ED0FDF /* KGAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BE9CDF1552CF2B00ED0FDF /* KGAViewController.m */; };
+		D3BE9CE31552CF2B00ED0FDF /* KGAViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3BE9CE11552CF2B00ED0FDF /* KGAViewController_iPhone.xib */; };
+		D3BE9CE61552CF2B00ED0FDF /* KGAViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3BE9CE41552CF2B00ED0FDF /* KGAViewController_iPad.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D3BE9CC81552CF2B00ED0FDF /* Kinvey Geo App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kinvey Geo App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3BE9CCC1552CF2B00ED0FDF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D3BE9CCE1552CF2B00ED0FDF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D3BE9CD01552CF2B00ED0FDF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D3BE9CD41552CF2B00ED0FDF /* Kinvey Geo App-Info.plist */ = {isa = PBXFileReference; path = "Kinvey Geo App-Info.plist"; sourceTree = "<group>"; };
+		D3BE9CD61552CF2B00ED0FDF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D3BE9CD81552CF2B00ED0FDF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D3BE9CDA1552CF2B00ED0FDF /* Kinvey Geo App-Prefix.pch */ = {isa = PBXFileReference; path = "Kinvey Geo App-Prefix.pch"; sourceTree = "<group>"; };
+		D3BE9CDB1552CF2B00ED0FDF /* KGAAppDelegate.h */ = {isa = PBXFileReference; path = KGAAppDelegate.h; sourceTree = "<group>"; };
+		D3BE9CDC1552CF2B00ED0FDF /* KGAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KGAAppDelegate.m; sourceTree = "<group>"; };
+		D3BE9CDE1552CF2B00ED0FDF /* KGAViewController.h */ = {isa = PBXFileReference; path = KGAViewController.h; sourceTree = "<group>"; };
+		D3BE9CDF1552CF2B00ED0FDF /* KGAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KGAViewController.m; sourceTree = "<group>"; };
+		D3BE9CE21552CF2B00ED0FDF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/KGAViewController_iPhone.xib; sourceTree = "<group>"; };
+		D3BE9CE51552CF2B00ED0FDF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/KGAViewController_iPad.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D3BE9CC51552CF2B00ED0FDF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3BE9CCD1552CF2B00ED0FDF /* UIKit.framework in Frameworks */,
+				D3BE9CCF1552CF2B00ED0FDF /* Foundation.framework in Frameworks */,
+				D3BE9CD11552CF2B00ED0FDF /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D3BE9CBD1552CF2B00ED0FDF = {
+			isa = PBXGroup;
+			children = (
+				D3BE9CD21552CF2B00ED0FDF /* Kinvey Geo App */,
+				D3BE9CCB1552CF2B00ED0FDF /* Frameworks */,
+				D3BE9CC91552CF2B00ED0FDF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D3BE9CC91552CF2B00ED0FDF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D3BE9CC81552CF2B00ED0FDF /* Kinvey Geo App.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D3BE9CCB1552CF2B00ED0FDF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D3BE9CCC1552CF2B00ED0FDF /* UIKit.framework */,
+				D3BE9CCE1552CF2B00ED0FDF /* Foundation.framework */,
+				D3BE9CD01552CF2B00ED0FDF /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D3BE9CD21552CF2B00ED0FDF /* Kinvey Geo App */ = {
+			isa = PBXGroup;
+			children = (
+				D3BE9CDB1552CF2B00ED0FDF /* KGAAppDelegate.h */,
+				D3BE9CDC1552CF2B00ED0FDF /* KGAAppDelegate.m */,
+				D3BE9CDE1552CF2B00ED0FDF /* KGAViewController.h */,
+				D3BE9CDF1552CF2B00ED0FDF /* KGAViewController.m */,
+				D3BE9CE11552CF2B00ED0FDF /* KGAViewController_iPhone.xib */,
+				D3BE9CE41552CF2B00ED0FDF /* KGAViewController_iPad.xib */,
+				D3BE9CD31552CF2B00ED0FDF /* Supporting Files */,
+			);
+			path = "Kinvey Geo App";
+			sourceTree = "<group>";
+		};
+		D3BE9CD31552CF2B00ED0FDF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D3BE9CD41552CF2B00ED0FDF /* Kinvey Geo App-Info.plist */,
+				D3BE9CD51552CF2B00ED0FDF /* InfoPlist.strings */,
+				D3BE9CD81552CF2B00ED0FDF /* main.m */,
+				D3BE9CDA1552CF2B00ED0FDF /* Kinvey Geo App-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D3BE9CC71552CF2B00ED0FDF /* Kinvey Geo App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3BE9CE91552CF2B00ED0FDF /* Build configuration list for PBXNativeTarget "Kinvey Geo App" */;
+			buildPhases = (
+				D3BE9CC41552CF2B00ED0FDF /* Sources */,
+				D3BE9CC51552CF2B00ED0FDF /* Frameworks */,
+				D3BE9CC61552CF2B00ED0FDF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Kinvey Geo App";
+			productName = "Kinvey Geo App";
+			productReference = D3BE9CC81552CF2B00ED0FDF /* Kinvey Geo App.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D3BE9CBF1552CF2B00ED0FDF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = KGA;
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = D3BE9CC21552CF2B00ED0FDF /* Build configuration list for PBXProject "Kinvey Geo App" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D3BE9CBD1552CF2B00ED0FDF;
+			productRefGroup = D3BE9CC91552CF2B00ED0FDF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D3BE9CC71552CF2B00ED0FDF /* Kinvey Geo App */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D3BE9CC61552CF2B00ED0FDF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3BE9CD71552CF2B00ED0FDF /* InfoPlist.strings in Resources */,
+				D3BE9CE31552CF2B00ED0FDF /* KGAViewController_iPhone.xib in Resources */,
+				D3BE9CE61552CF2B00ED0FDF /* KGAViewController_iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D3BE9CC41552CF2B00ED0FDF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3BE9CD91552CF2B00ED0FDF /* main.m in Sources */,
+				D3BE9CDD1552CF2B00ED0FDF /* KGAAppDelegate.m in Sources */,
+				D3BE9CE01552CF2B00ED0FDF /* KGAViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D3BE9CD51552CF2B00ED0FDF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3BE9CD61552CF2B00ED0FDF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D3BE9CE11552CF2B00ED0FDF /* KGAViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3BE9CE21552CF2B00ED0FDF /* en */,
+			);
+			name = KGAViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		D3BE9CE41552CF2B00ED0FDF /* KGAViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3BE9CE51552CF2B00ED0FDF /* en */,
+			);
+			name = KGAViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D3BE9CE71552CF2B00ED0FDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D3BE9CE81552CF2B00ED0FDF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D3BE9CEA1552CF2B00ED0FDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Kinvey Geo App/Kinvey Geo App-Prefix.pch";
+				INFOPLIST_FILE = "Kinvey Geo App/Kinvey Geo App-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D3BE9CEB1552CF2B00ED0FDF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Kinvey Geo App/Kinvey Geo App-Prefix.pch";
+				INFOPLIST_FILE = "Kinvey Geo App/Kinvey Geo App-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D3BE9CC21552CF2B00ED0FDF /* Build configuration list for PBXProject "Kinvey Geo App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3BE9CE71552CF2B00ED0FDF /* Debug */,
+				D3BE9CE81552CF2B00ED0FDF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3BE9CE91552CF2B00ED0FDF /* Build configuration list for PBXNativeTarget "Kinvey Geo App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3BE9CEA1552CF2B00ED0FDF /* Debug */,
+				D3BE9CEB1552CF2B00ED0FDF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D3BE9CBF1552CF2B00ED0FDF /* Project object */;
+}
