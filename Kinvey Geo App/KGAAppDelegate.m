@@ -9,6 +9,7 @@
 #import "KGAAppDelegate.h"
 
 #import "KGAViewController.h"
+#import <KinveyKit/KinveyKit.h>
 
 @implementation KGAAppDelegate
 
@@ -19,6 +20,10 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    
+    [[KCSClient sharedClient] initializeKinveyServiceForAppKey:@"kid1526" withAppSecret:@"1acea08e238341e9ba9ebdcd0adf7336" usingOptions:nil];
+    
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         self.viewController = [[KGAViewController alloc] initWithNibName:@"KGAViewController_iPhone" bundle:nil];
     } else {

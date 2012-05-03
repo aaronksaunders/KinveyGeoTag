@@ -8,10 +8,20 @@
 
 #import "KGAMapNote.h"
 
+@interface KGAMapNote ()
+
+@property (nonatomic) NSArray *latLong;
+@property (nonatomic) NSString *noteId;
+
+@end
+
 @implementation KGAMapNote
 
-@synthesize coordinate = _coordinate;
+// @synthesize coordinate = _coordinate;
 @synthesize title = _title;
+@synthesize latLong = _latLong;
+@synthesize noteId = _noteId;
+
 
 - (id)init
 {
@@ -22,12 +32,44 @@
 {
     self = [super self];
     if (self){
-        _coordinate = coordinate;
+        _latLong = nil;
+        _noteId = nil;
+        [self setCoordinate: coordinate];
         [self setTitle:title];
     }
     return self;
 }
 
+- (void)setCoordinate:(CLLocationCoordinate2D)newCoordinate
+{
+    self.latLong = [NSArray arrayWithObjects:
+                    [NSNumber numberWithDouble:newCoordinate.latitude],
+                    [NSNumber numberWithDouble:newCoordinate.longitude], nil];
+}
 
+- (CLLocationCoordinate2D)coordinate
+{
+    NSNumber *lat = [self.latLong objectAtIndex:0];
+    NSNumber *lon = [self.latLong objectAtIndex:1];
+    
+    return CLLocationCoordinate2DMake(lat.doubleValue, lon.doubleValue);
+}
+
+
+- (NSDictionary *)hostToKinveyPropertyMapping
+{
+    static NSDictionary *mapping = nil;
+    
+    if (mapping == nil){
+        mapping = [NSDictionary dictionaryWithObjectsAndKeys:
+                   @"_id", @"noteId",
+                   @"_geoloc", @"latLong",
+                   @"note", @"title", nil];
+    }
+    
+    return mapping;
+    
+    
+}
 
 @end

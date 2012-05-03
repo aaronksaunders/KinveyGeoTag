@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
+#import <KinveyKit/KinveyKit.h>
 
-@interface KGAMapNote : NSObject <MKAnnotation>
+@interface KGAMapNote : NSObject <MKAnnotation, KCSPersistable>
 
 
 - (id)initWithCoordinate:(CLLocationCoordinate2D)coordinate title: (NSString *)title;

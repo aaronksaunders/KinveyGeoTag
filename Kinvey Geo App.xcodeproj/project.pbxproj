@@ -19,6 +19,16 @@
 		D3BE9CE61552CF2B00ED0FDF /* KGAViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3BE9CE41552CF2B00ED0FDF /* KGAViewController_iPad.xib */; };
 		D3BE9CED1552CF4F00ED0FDF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BE9CEC1552CF4F00ED0FDF /* CoreLocation.framework */; };
 		D3BE9CEF1552D19D00ED0FDF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BE9CEE1552D19D00ED0FDF /* MapKit.framework */; };
+		D3D803791553178B00656C40 /* KinveyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3D803781553178B00656C40 /* KinveyKit.framework */; };
+		D3D8037C1553186200656C40 /* libUAirship-1.1.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3D8037B1553186200656C40 /* libUAirship-1.1.1.a */; };
+		D3D803831553193200656C40 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3D8037D1553193200656C40 /* CFNetwork.framework */; };
+		D3D803841553193200656C40 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3D8037E1553193200656C40 /* CoreTelephony.framework */; };
+		D3D803851553193200656C40 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3D8037F1553193200656C40 /* MobileCoreServices.framework */; };
+		D3D803861553193200656C40 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3D803801553193200656C40 /* Security.framework */; };
+		D3D803871553193200656C40 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3D803811553193200656C40 /* StoreKit.framework */; };
+		D3D803881553193200656C40 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3D803821553193200656C40 /* SystemConfiguration.framework */; };
+		D3D8038A1553193E00656C40 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D3D803891553193E00656C40 /* libz.dylib */; };
+		D3D8038C1553194300656C40 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D3D8038B1553194300656C40 /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +50,16 @@
 		D3BE9CE51552CF2B00ED0FDF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/KGAViewController_iPad.xib; sourceTree = "<group>"; };
 		D3BE9CEC1552CF4F00ED0FDF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D3BE9CEE1552D19D00ED0FDF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D3D803781553178B00656C40 /* KinveyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KinveyKit.framework; sourceTree = "<group>"; };
+		D3D8037B1553186200656C40 /* libUAirship-1.1.1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libUAirship-1.1.1.a"; path = "Airship/libUAirship-1.1.1.a"; sourceTree = "<group>"; };
+		D3D8037D1553193200656C40 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		D3D8037E1553193200656C40 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		D3D8037F1553193200656C40 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		D3D803801553193200656C40 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D3D803811553193200656C40 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		D3D803821553193200656C40 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D3D803891553193E00656C40 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		D3D8038B1553194300656C40 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,11 +67,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3D8038C1553194300656C40 /* libsqlite3.dylib in Frameworks */,
+				D3D8038A1553193E00656C40 /* libz.dylib in Frameworks */,
+				D3D803831553193200656C40 /* CFNetwork.framework in Frameworks */,
+				D3D803841553193200656C40 /* CoreTelephony.framework in Frameworks */,
+				D3D803851553193200656C40 /* MobileCoreServices.framework in Frameworks */,
+				D3D803861553193200656C40 /* Security.framework in Frameworks */,
+				D3D803871553193200656C40 /* StoreKit.framework in Frameworks */,
+				D3D803881553193200656C40 /* SystemConfiguration.framework in Frameworks */,
+				D3BE9CD11552CF2B00ED0FDF /* CoreGraphics.framework in Frameworks */,
+				D3BE9CCD1552CF2B00ED0FDF /* UIKit.framework in Frameworks */,
+				D3D8037C1553186200656C40 /* libUAirship-1.1.1.a in Frameworks */,
 				D3BE9CEF1552D19D00ED0FDF /* MapKit.framework in Frameworks */,
 				D3BE9CED1552CF4F00ED0FDF /* CoreLocation.framework in Frameworks */,
-				D3BE9CCD1552CF2B00ED0FDF /* UIKit.framework in Frameworks */,
 				D3BE9CCF1552CF2B00ED0FDF /* Foundation.framework in Frameworks */,
-				D3BE9CD11552CF2B00ED0FDF /* CoreGraphics.framework in Frameworks */,
+				D3D803791553178B00656C40 /* KinveyKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +108,16 @@
 		D3BE9CCB1552CF2B00ED0FDF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D3D8038B1553194300656C40 /* libsqlite3.dylib */,
+				D3D803891553193E00656C40 /* libz.dylib */,
+				D3D8037D1553193200656C40 /* CFNetwork.framework */,
+				D3D8037E1553193200656C40 /* CoreTelephony.framework */,
+				D3D8037F1553193200656C40 /* MobileCoreServices.framework */,
+				D3D803801553193200656C40 /* Security.framework */,
+				D3D803811553193200656C40 /* StoreKit.framework */,
+				D3D803821553193200656C40 /* SystemConfiguration.framework */,
+				D3D8037B1553186200656C40 /* libUAirship-1.1.1.a */,
+				D3D803781553178B00656C40 /* KinveyKit.framework */,
 				D3BE9CEE1552D19D00ED0FDF /* MapKit.framework */,
 				D3BE9CEC1552CF4F00ED0FDF /* CoreLocation.framework */,
 				D3BE9CCC1552CF2B00ED0FDF /* UIKit.framework */,
@@ -265,9 +305,18 @@
 		D3BE9CEA1552CF2B00ED0FDF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Kinvey Geo App/Kinvey Geo App-Prefix.pch";
 				INFOPLIST_FILE = "Kinvey Geo App/Kinvey Geo App-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Airship\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -276,9 +325,18 @@
 		D3BE9CEB1552CF2B00ED0FDF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Kinvey Geo App/Kinvey Geo App-Prefix.pch";
 				INFOPLIST_FILE = "Kinvey Geo App/Kinvey Geo App-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Airship\"",
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
