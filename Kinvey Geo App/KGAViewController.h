@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
+#import <KinveyKit/KinveyKit.h>
 
-@interface KGAViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate, UITextFieldDelegate>
+@interface KGAViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate, UITextFieldDelegate, KCSCollectionDelegate, KCSPersistableDelegate>
 
 @property (nonatomic) CLLocationManager *locationManager;
 
@@ -21,6 +22,7 @@
 
 
 - (IBAction)changeMapType:(id)sender;
+- (IBAction)refreshPlaces:(id)sender;
 
 
 - (void)findLocation;

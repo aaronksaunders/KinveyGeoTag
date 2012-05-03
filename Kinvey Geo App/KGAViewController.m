@@ -5,7 +5,6 @@
 //  Created by Brian Wilson on 5/3/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
-
 #import "KGAViewController.h"
 #import "KGAMapNote.h"
 
@@ -18,6 +17,8 @@ static MKMapType mapTypeMap[3] = {
 
 @interface KGAViewController ()
 
+@property (retain) KCSCollection *mapNotes;
+
 @end
 
 @implementation KGAViewController
@@ -27,6 +28,8 @@ static MKMapType mapTypeMap[3] = {
 @synthesize locationTitleField = _locationTitleField;
 @synthesize selectedMapType = _selectedMapType;
 @synthesize activityIndicator = _activityIndicator;
+@synthesize mapNotes = _mapNotes;
+
 
 
 
@@ -38,6 +41,7 @@ static MKMapType mapTypeMap[3] = {
         _locationManager = [[CLLocationManager alloc] init];
         [_locationManager setDelegate:self];
         [_locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
+        _mapNotes = [KCSCollection collectionFromString:@"mapNotes" ofClass:[KGAMapNote class]];
     }
     
     return self;
@@ -50,6 +54,7 @@ static MKMapType mapTypeMap[3] = {
 	// Do any additional setup after loading the view, typically from a nib.
     [self.worldView setShowsUserLocation:YES];
 }
+
 
 - (void)viewDidUnload
 {
@@ -72,6 +77,11 @@ static MKMapType mapTypeMap[3] = {
     self.worldView.mapType = mapTypeMap[self.selectedMapType.selectedSegmentIndex];
 }
 
+- (IBAction)refreshPlaces:(id)sender {
+    [self.worldView removeAnnotations:self.worldView.annotations];
+    [self updateMarkers];
+}
+
 - (void)findLocation
 {
     [self.locationManager startUpdatingLocation];
@@ -88,10 +98,31 @@ static MKMapType mapTypeMap[3] = {
     [self.worldView setRegion:region animated:YES];
     
     self.locationTitleField.text = @"";
-    [self.activityIndicator stopAnimating];
     self.locationTitleField.hidden = NO;
     [self.locationManager stopUpdatingLocation];
     
+    // Save this to Kinvey
+    [note saveToCollection:self.mapNotes withDelegate:self];
+}
+
+- (void)updateMarkers
+{
+//    [self.mapNotes fetchAllWithDelegate:self];
+    MKCoordinateSpan span = self.worldView.region.span;
+    double distanceInMiles = span.latitudeDelta*69;
+    CLLocationCoordinate2D mapCenter =  self.worldView.centerCoordinate;
+    
+    KCSQuery *q = [KCSQuery queryOnField:@"latLong"
+               usingConditionalsForValues:
+                    kKCSNearSphere,
+                    [NSArray arrayWithObjects:
+                     [NSNumber numberWithFloat:mapCenter.longitude],
+                     [NSNumber numberWithFloat:mapCenter.latitude], nil],
+                    kKCSMaxDistance,
+                    [NSNumber numberWithFloat:distanceInMiles], nil];
+
+    self.mapNotes.query = q;
+    [self.mapNotes fetchWithDelegate:self];
 }
 
 #pragma mark -
@@ -121,9 +152,15 @@ static MKMapType mapTypeMap[3] = {
 #pragma mark MKMapView Delegate
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
-//    [mapView setCenterCoordinate:[userLocation coordinate] animated:YES];
-    [mapView setRegion:MKCoordinateRegionMakeWithDistance([userLocation coordinate], 50.0E3, 50.0E3) animated:YES];
+    NSAssert(mapView != nil, @"Expected mapView to be not nil, WTF mate");
+    NSAssert(userLocation != nil, @"Expected userLocation to be not nil, WTF mate");
+    [mapView setRegion:MKCoordinateRegionMakeWithDistance([userLocation coordinate], 1.0E3, 1.0E3) animated:YES];
     
+}
+
+- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
+{
+    [self updateMarkers];
 }
 
 #pragma mark -
@@ -134,6 +171,49 @@ static MKMapType mapTypeMap[3] = {
     [textField resignFirstResponder];
     return YES;
 }
+
+
+#pragma mark -
+#pragma mark KCSPersistableDelegate
+-(void)entity:(id)entity operationDidCompleteWithResult:(NSObject *)result
+{
+    [self.activityIndicator stopAnimating];
+
+}
+
+- (void)entity:(id)entity operationDidFailWithError:(NSError *)error
+{
+    [self.activityIndicator stopAnimating];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Unable to Save Note"
+                                                    message:[error description]
+                                                   delegate:self cancelButtonTitle:@"Ok"
+                                           otherButtonTitles:nil];
+
+    [alert show];
+
+}
+
+#pragma mark -
+#pragma mark KCSCollectionDelegate
+
+- (void)collection:(KCSCollection *)collection didCompleteWithResult:(NSArray *)result
+{
+    NSLog(@"Adding %d annotations", [result count]);
+    [self.worldView addAnnotations:result];
+}
+
+- (void)collection:(KCSCollection *)collection didFailWithError:(NSError *)error
+{
+    [self.activityIndicator stopAnimating];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Unable to Get Notes"
+                                                    message:[error description]
+                                                   delegate:self cancelButtonTitle:@"Ok"
+                                          otherButtonTitles:nil];
+    
+    [alert show];
+}
+
+
 
 
 @end

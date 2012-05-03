@@ -43,14 +43,14 @@
 - (void)setCoordinate:(CLLocationCoordinate2D)newCoordinate
 {
     self.latLong = [NSArray arrayWithObjects:
-                    [NSNumber numberWithDouble:newCoordinate.latitude],
-                    [NSNumber numberWithDouble:newCoordinate.longitude], nil];
+                    [NSNumber numberWithDouble:newCoordinate.longitude],
+                    [NSNumber numberWithDouble:newCoordinate.latitude], nil];
 }
 
 - (CLLocationCoordinate2D)coordinate
 {
-    NSNumber *lat = [self.latLong objectAtIndex:0];
-    NSNumber *lon = [self.latLong objectAtIndex:1];
+    NSNumber *lat = [self.latLong objectAtIndex:1];
+    NSNumber *lon = [self.latLong objectAtIndex:0];
     
     return CLLocationCoordinate2DMake(lat.doubleValue, lon.doubleValue);
 }
