@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D356673A15530215009D3DF8 /* KGAMapNote.m in Sources */ = {isa = PBXBuildFile; fileRef = D356673915530215009D3DF8 /* KGAMapNote.m */; };
 		D3BE9CCD1552CF2B00ED0FDF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BE9CCC1552CF2B00ED0FDF /* UIKit.framework */; };
 		D3BE9CCF1552CF2B00ED0FDF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BE9CCE1552CF2B00ED0FDF /* Foundation.framework */; };
 		D3BE9CD11552CF2B00ED0FDF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BE9CD01552CF2B00ED0FDF /* CoreGraphics.framework */; };
@@ -16,23 +17,29 @@
 		D3BE9CE01552CF2B00ED0FDF /* KGAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BE9CDF1552CF2B00ED0FDF /* KGAViewController.m */; };
 		D3BE9CE31552CF2B00ED0FDF /* KGAViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3BE9CE11552CF2B00ED0FDF /* KGAViewController_iPhone.xib */; };
 		D3BE9CE61552CF2B00ED0FDF /* KGAViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3BE9CE41552CF2B00ED0FDF /* KGAViewController_iPad.xib */; };
+		D3BE9CED1552CF4F00ED0FDF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BE9CEC1552CF4F00ED0FDF /* CoreLocation.framework */; };
+		D3BE9CEF1552D19D00ED0FDF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BE9CEE1552D19D00ED0FDF /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D356673815530215009D3DF8 /* KGAMapNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGAMapNote.h; sourceTree = "<group>"; };
+		D356673915530215009D3DF8 /* KGAMapNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGAMapNote.m; sourceTree = "<group>"; };
 		D3BE9CC81552CF2B00ED0FDF /* Kinvey Geo App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kinvey Geo App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3BE9CCC1552CF2B00ED0FDF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D3BE9CCE1552CF2B00ED0FDF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D3BE9CD01552CF2B00ED0FDF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		D3BE9CD41552CF2B00ED0FDF /* Kinvey Geo App-Info.plist */ = {isa = PBXFileReference; path = "Kinvey Geo App-Info.plist"; sourceTree = "<group>"; };
+		D3BE9CD41552CF2B00ED0FDF /* Kinvey Geo App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Kinvey Geo App-Info.plist"; sourceTree = "<group>"; };
 		D3BE9CD61552CF2B00ED0FDF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D3BE9CD81552CF2B00ED0FDF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D3BE9CDA1552CF2B00ED0FDF /* Kinvey Geo App-Prefix.pch */ = {isa = PBXFileReference; path = "Kinvey Geo App-Prefix.pch"; sourceTree = "<group>"; };
-		D3BE9CDB1552CF2B00ED0FDF /* KGAAppDelegate.h */ = {isa = PBXFileReference; path = KGAAppDelegate.h; sourceTree = "<group>"; };
+		D3BE9CDA1552CF2B00ED0FDF /* Kinvey Geo App-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Kinvey Geo App-Prefix.pch"; sourceTree = "<group>"; };
+		D3BE9CDB1552CF2B00ED0FDF /* KGAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KGAAppDelegate.h; sourceTree = "<group>"; };
 		D3BE9CDC1552CF2B00ED0FDF /* KGAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KGAAppDelegate.m; sourceTree = "<group>"; };
-		D3BE9CDE1552CF2B00ED0FDF /* KGAViewController.h */ = {isa = PBXFileReference; path = KGAViewController.h; sourceTree = "<group>"; };
+		D3BE9CDE1552CF2B00ED0FDF /* KGAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KGAViewController.h; sourceTree = "<group>"; };
 		D3BE9CDF1552CF2B00ED0FDF /* KGAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KGAViewController.m; sourceTree = "<group>"; };
 		D3BE9CE21552CF2B00ED0FDF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/KGAViewController_iPhone.xib; sourceTree = "<group>"; };
 		D3BE9CE51552CF2B00ED0FDF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/KGAViewController_iPad.xib; sourceTree = "<group>"; };
+		D3BE9CEC1552CF4F00ED0FDF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D3BE9CEE1552D19D00ED0FDF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +47,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3BE9CEF1552D19D00ED0FDF /* MapKit.framework in Frameworks */,
+				D3BE9CED1552CF4F00ED0FDF /* CoreLocation.framework in Frameworks */,
 				D3BE9CCD1552CF2B00ED0FDF /* UIKit.framework in Frameworks */,
 				D3BE9CCF1552CF2B00ED0FDF /* Foundation.framework in Frameworks */,
 				D3BE9CD11552CF2B00ED0FDF /* CoreGraphics.framework in Frameworks */,
@@ -69,6 +78,8 @@
 		D3BE9CCB1552CF2B00ED0FDF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D3BE9CEE1552D19D00ED0FDF /* MapKit.framework */,
+				D3BE9CEC1552CF4F00ED0FDF /* CoreLocation.framework */,
 				D3BE9CCC1552CF2B00ED0FDF /* UIKit.framework */,
 				D3BE9CCE1552CF2B00ED0FDF /* Foundation.framework */,
 				D3BE9CD01552CF2B00ED0FDF /* CoreGraphics.framework */,
@@ -83,6 +94,8 @@
 				D3BE9CDC1552CF2B00ED0FDF /* KGAAppDelegate.m */,
 				D3BE9CDE1552CF2B00ED0FDF /* KGAViewController.h */,
 				D3BE9CDF1552CF2B00ED0FDF /* KGAViewController.m */,
+				D356673815530215009D3DF8 /* KGAMapNote.h */,
+				D356673915530215009D3DF8 /* KGAMapNote.m */,
 				D3BE9CE11552CF2B00ED0FDF /* KGAViewController_iPhone.xib */,
 				D3BE9CE41552CF2B00ED0FDF /* KGAViewController_iPad.xib */,
 				D3BE9CD31552CF2B00ED0FDF /* Supporting Files */,
@@ -168,6 +181,7 @@
 				D3BE9CD91552CF2B00ED0FDF /* main.m in Sources */,
 				D3BE9CDD1552CF2B00ED0FDF /* KGAAppDelegate.m in Sources */,
 				D3BE9CE01552CF2B00ED0FDF /* KGAViewController.m in Sources */,
+				D356673A15530215009D3DF8 /* KGAMapNote.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +303,7 @@
 				D3BE9CEB1552CF2B00ED0FDF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
