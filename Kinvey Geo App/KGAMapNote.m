@@ -81,8 +81,6 @@ enum {
     }
     
     return mapping;
-    
-    
 }
 
 @end
