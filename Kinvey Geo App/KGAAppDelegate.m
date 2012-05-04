@@ -3,7 +3,7 @@
 //  Kinvey Geo App
 //
 //  Created by Brian Wilson on 5/3/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Kinvey. See LICENSE for license information.
 //
 
 #import "KGAAppDelegate.h"
@@ -21,7 +21,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
-    
+    // Initialize Kinvey for our key/secret
     [[KCSClient sharedClient] initializeKinveyServiceForAppKey:@"kid1526" withAppSecret:@"1acea08e238341e9ba9ebdcd0adf7336" usingOptions:nil];
     
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {

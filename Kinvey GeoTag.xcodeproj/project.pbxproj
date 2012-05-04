@@ -34,14 +34,14 @@
 /* Begin PBXFileReference section */
 		D356673815530215009D3DF8 /* KGAMapNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGAMapNote.h; sourceTree = "<group>"; };
 		D356673915530215009D3DF8 /* KGAMapNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGAMapNote.m; sourceTree = "<group>"; };
-		D3BE9CC81552CF2B00ED0FDF /* Kinvey Geo App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kinvey Geo App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3BE9CC81552CF2B00ED0FDF /* Kinvey GeoTag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kinvey GeoTag.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3BE9CCC1552CF2B00ED0FDF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D3BE9CCE1552CF2B00ED0FDF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D3BE9CD01552CF2B00ED0FDF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		D3BE9CD41552CF2B00ED0FDF /* Kinvey Geo App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Kinvey Geo App-Info.plist"; sourceTree = "<group>"; };
+		D3BE9CD41552CF2B00ED0FDF /* Kinvey GeoTag-Info.plist */ = {isa = PBXFileReference; path = "Kinvey GeoTag-Info.plist"; sourceTree = "<group>"; };
 		D3BE9CD61552CF2B00ED0FDF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D3BE9CD81552CF2B00ED0FDF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D3BE9CDA1552CF2B00ED0FDF /* Kinvey Geo App-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Kinvey Geo App-Prefix.pch"; sourceTree = "<group>"; };
+		D3BE9CDA1552CF2B00ED0FDF /* Kinvey GeoTag-Prefix.pch */ = {isa = PBXFileReference; path = "Kinvey GeoTag-Prefix.pch"; sourceTree = "<group>"; };
 		D3BE9CDB1552CF2B00ED0FDF /* KGAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KGAAppDelegate.h; sourceTree = "<group>"; };
 		D3BE9CDC1552CF2B00ED0FDF /* KGAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KGAAppDelegate.m; sourceTree = "<group>"; };
 		D3BE9CDE1552CF2B00ED0FDF /* KGAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KGAViewController.h; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 		D3BE9CC91552CF2B00ED0FDF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D3BE9CC81552CF2B00ED0FDF /* Kinvey Geo App.app */,
+				D3BE9CC81552CF2B00ED0FDF /* Kinvey GeoTag.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,10 +146,10 @@
 		D3BE9CD31552CF2B00ED0FDF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D3BE9CD41552CF2B00ED0FDF /* Kinvey Geo App-Info.plist */,
+				D3BE9CD41552CF2B00ED0FDF /* Kinvey GeoTag-Info.plist */,
 				D3BE9CD51552CF2B00ED0FDF /* InfoPlist.strings */,
 				D3BE9CD81552CF2B00ED0FDF /* main.m */,
-				D3BE9CDA1552CF2B00ED0FDF /* Kinvey Geo App-Prefix.pch */,
+				D3BE9CDA1552CF2B00ED0FDF /* Kinvey GeoTag-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -157,9 +157,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D3BE9CC71552CF2B00ED0FDF /* Kinvey Geo App */ = {
+		D3BE9CC71552CF2B00ED0FDF /* Kinvey GeoTag */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D3BE9CE91552CF2B00ED0FDF /* Build configuration list for PBXNativeTarget "Kinvey Geo App" */;
+			buildConfigurationList = D3BE9CE91552CF2B00ED0FDF /* Build configuration list for PBXNativeTarget "Kinvey GeoTag" */;
 			buildPhases = (
 				D3BE9CC41552CF2B00ED0FDF /* Sources */,
 				D3BE9CC51552CF2B00ED0FDF /* Frameworks */,
@@ -169,9 +169,9 @@
 			);
 			dependencies = (
 			);
-			name = "Kinvey Geo App";
+			name = "Kinvey GeoTag";
 			productName = "Kinvey Geo App";
-			productReference = D3BE9CC81552CF2B00ED0FDF /* Kinvey Geo App.app */;
+			productReference = D3BE9CC81552CF2B00ED0FDF /* Kinvey GeoTag.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -183,7 +183,7 @@
 				CLASSPREFIX = KGA;
 				LastUpgradeCheck = 0430;
 			};
-			buildConfigurationList = D3BE9CC21552CF2B00ED0FDF /* Build configuration list for PBXProject "Kinvey Geo App" */;
+			buildConfigurationList = D3BE9CC21552CF2B00ED0FDF /* Build configuration list for PBXProject "Kinvey GeoTag" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -195,7 +195,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D3BE9CC71552CF2B00ED0FDF /* Kinvey Geo App */,
+				D3BE9CC71552CF2B00ED0FDF /* Kinvey GeoTag */,
 			);
 		};
 /* End PBXProject section */
@@ -310,14 +310,14 @@
 					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Kinvey Geo App/Kinvey Geo App-Prefix.pch";
-				INFOPLIST_FILE = "Kinvey Geo App/Kinvey Geo App-Info.plist";
+				GCC_PREFIX_HEADER = "Kinvey Geo App/Kinvey GeoTag-Prefix.pch";
+				INFOPLIST_FILE = "Kinvey Geo App/Kinvey GeoTag-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Airship\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Kinvey GeoTag";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -330,14 +330,14 @@
 					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Kinvey Geo App/Kinvey Geo App-Prefix.pch";
-				INFOPLIST_FILE = "Kinvey Geo App/Kinvey Geo App-Info.plist";
+				GCC_PREFIX_HEADER = "Kinvey Geo App/Kinvey GeoTag-Prefix.pch";
+				INFOPLIST_FILE = "Kinvey Geo App/Kinvey GeoTag-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Airship\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Kinvey GeoTag";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -345,7 +345,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D3BE9CC21552CF2B00ED0FDF /* Build configuration list for PBXProject "Kinvey Geo App" */ = {
+		D3BE9CC21552CF2B00ED0FDF /* Build configuration list for PBXProject "Kinvey GeoTag" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D3BE9CE71552CF2B00ED0FDF /* Debug */,
@@ -354,7 +354,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D3BE9CE91552CF2B00ED0FDF /* Build configuration list for PBXNativeTarget "Kinvey Geo App" */ = {
+		D3BE9CE91552CF2B00ED0FDF /* Build configuration list for PBXNativeTarget "Kinvey GeoTag" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D3BE9CEA1552CF2B00ED0FDF /* Debug */,

@@ -3,8 +3,7 @@
 //  Kinvey Geo App
 //
 //  Created by Brian Wilson on 5/3/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
-//
+//  Copyright (c) 2012 Kinvey. See LICENSE for license information.//
 
 #import <UIKit/UIKit.h>
 

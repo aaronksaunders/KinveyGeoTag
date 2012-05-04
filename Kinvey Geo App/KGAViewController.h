@@ -3,8 +3,7 @@
 //  Kinvey Geo App
 //
 //  Created by Brian Wilson on 5/3/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
-//
+//  Copyright (c) 2012 Kinvey. See LICENSE for license information.
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
@@ -17,11 +16,9 @@
 
 @property (weak, nonatomic) IBOutlet MKMapView *worldView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
-@property (weak, nonatomic) IBOutlet UITextField *locationTitleField;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *selectedMapType;
+@property (weak, nonatomic) IBOutlet UITextField *locationNoteField;
 
 
-- (IBAction)changeMapType:(id)sender;
 - (IBAction)refreshPlaces:(id)sender;
 
 
