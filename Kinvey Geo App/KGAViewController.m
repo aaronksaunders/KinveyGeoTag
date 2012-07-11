@@ -14,6 +14,7 @@
 @interface KGAViewController ()
 
 @property (retain) KCSCollection *mapNotes;
+@property (retain) KCSCollection *hotels;
 
 @end
 
@@ -24,6 +25,7 @@
 @synthesize locationNoteField = _locationTitleField;
 @synthesize activityIndicator = _activityIndicator;
 @synthesize mapNotes = _mapNotes;
+@synthesize hotels = _hotels;
 
 
 
@@ -43,6 +45,10 @@
         
         // KINVEY: Here we define our collection to use 
         _mapNotes = [KCSCollection collectionFromString:@"mapNotes" ofClass:[KGAMapNote class]];
+        
+        // KINVEY: Here we define our collection to use (this is for data
+        // integration)
+        _hotels = [KCSCollection collectionFromString:@"hotels" ofClass:[KGAMapNote class]];
     }
     
     return self;
@@ -146,8 +152,17 @@
 
     // Kinvey: Set the query to our built query
     self.mapNotes.query = q;
+
+    // Kinvey: Search for our annotations.  We'll populate the map in the delegate
+    [self.mapNotes fetchWithDelegate:self];
+    
+    // Kinvey: External place data
+    //         Add a filter for hotel
+    [q addQueryOnField:@"keyword" withExactMatchForValue:@"hotel"];
+    self.hotels.query = q;
     
     // Kinvey: Search for our annotations.  We'll populate the map in the delegate
+    //         This works with external data too!
     [self.mapNotes fetchWithDelegate:self];
 }
 
