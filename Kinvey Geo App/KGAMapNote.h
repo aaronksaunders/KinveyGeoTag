@@ -19,4 +19,10 @@
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
 @property (nonatomic, copy) NSString *title;
 
+// This iVar holds the complete results from the location provider
+// (if not from Kinvey).  This is non-portable between location providers, but
+// can give you more information if you're using a specific provider, or
+// want to handle the mapping between various providers.
+@property (nonatomic, readonly, retain) NSDictionary *fullLocationResults;
+
 @end

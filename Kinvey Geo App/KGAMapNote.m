@@ -20,6 +20,8 @@ enum {
 
 @property (nonatomic) NSArray *coordinateArray;
 @property (nonatomic) NSString *noteId;
+@property (nonatomic, readwrite, retain) NSDictionary *fullLocationResults;
+
 
 @end
 
@@ -28,6 +30,8 @@ enum {
 @synthesize title = _title;
 @synthesize coordinateArray = _coordinateArray;
 @synthesize noteId = _noteId;
+@synthesize fullLocationResults = _fullLocationResults;
+
 
 
 - (id)init
@@ -77,7 +81,8 @@ enum {
         mapping = [NSDictionary dictionaryWithObjectsAndKeys:
                    @"_id", @"noteId",              // noteId maps to _id
                    @"_geoloc", @"coordinateArray", // coordinateArray maps to _geoloc
-                   @"note", @"title", nil];        // title maps to note
+                   @"note", @"title",              // title maps to note
+                   @"fullResults", @"fullLocationResults", nil]; // Grab the non-portable results
     }
     
     return mapping;
