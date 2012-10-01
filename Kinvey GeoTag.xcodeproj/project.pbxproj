@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27FA77D8161A05C700B96FDB /* libUAirship-1.3.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FA77D7161A05C700B96FDB /* libUAirship-1.3.3.a */; };
+		27FA77DA161A05D300B96FDB /* KinveyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FA77D9161A05D300B96FDB /* KinveyKit.framework */; };
+		27FA77DC161A085C00B96FDB /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FA77DB161A085C00B96FDB /* Twitter.framework */; };
+		27FA77DE161A086000B96FDB /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FA77DD161A086000B96FDB /* Accounts.framework */; };
+		27FA77E4161A12FE00B96FDB /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 27FA77E3161A12FE00B96FDB /* Default.png */; };
+		27FA77E7161A152C00B96FDB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27FA77E5161A152C00B96FDB /* Default-568h@2x.png */; };
+		27FA77E8161A152C00B96FDB /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27FA77E6161A152C00B96FDB /* Default@2x.png */; };
+		27FA77EC161A173200B96FDB /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 27FA77EB161A173200B96FDB /* Icon.png */; };
+		27FA77F0161A17A400B96FDB /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27FA77EF161A17A400B96FDB /* Icon@2x.png */; };
 		D356673A15530215009D3DF8 /* KGAMapNote.m in Sources */ = {isa = PBXBuildFile; fileRef = D356673915530215009D3DF8 /* KGAMapNote.m */; };
 		D3BE9CCD1552CF2B00ED0FDF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BE9CCC1552CF2B00ED0FDF /* UIKit.framework */; };
 		D3BE9CCF1552CF2B00ED0FDF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BE9CCE1552CF2B00ED0FDF /* Foundation.framework */; };
@@ -19,8 +28,6 @@
 		D3BE9CE61552CF2B00ED0FDF /* KGAViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3BE9CE41552CF2B00ED0FDF /* KGAViewController_iPad.xib */; };
 		D3BE9CED1552CF4F00ED0FDF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BE9CEC1552CF4F00ED0FDF /* CoreLocation.framework */; };
 		D3BE9CEF1552D19D00ED0FDF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BE9CEE1552D19D00ED0FDF /* MapKit.framework */; };
-		D3D803791553178B00656C40 /* KinveyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3D803781553178B00656C40 /* KinveyKit.framework */; };
-		D3D8037C1553186200656C40 /* libUAirship-1.1.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3D8037B1553186200656C40 /* libUAirship-1.1.1.a */; };
 		D3D803831553193200656C40 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3D8037D1553193200656C40 /* CFNetwork.framework */; };
 		D3D803841553193200656C40 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3D8037E1553193200656C40 /* CoreTelephony.framework */; };
 		D3D803851553193200656C40 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3D8037F1553193200656C40 /* MobileCoreServices.framework */; };
@@ -32,16 +39,25 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		27FA77D7161A05C700B96FDB /* libUAirship-1.3.3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libUAirship-1.3.3.a"; path = "Airship/libUAirship-1.3.3.a"; sourceTree = "<group>"; };
+		27FA77D9161A05D300B96FDB /* KinveyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KinveyKit.framework; sourceTree = "<group>"; };
+		27FA77DB161A085C00B96FDB /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		27FA77DD161A086000B96FDB /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		27FA77E3161A12FE00B96FDB /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		27FA77E5161A152C00B96FDB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		27FA77E6161A152C00B96FDB /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		27FA77EB161A173200B96FDB /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
+		27FA77EF161A17A400B96FDB /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
 		D356673815530215009D3DF8 /* KGAMapNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGAMapNote.h; sourceTree = "<group>"; };
 		D356673915530215009D3DF8 /* KGAMapNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGAMapNote.m; sourceTree = "<group>"; };
 		D3BE9CC81552CF2B00ED0FDF /* Kinvey GeoTag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kinvey GeoTag.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3BE9CCC1552CF2B00ED0FDF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D3BE9CCE1552CF2B00ED0FDF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D3BE9CD01552CF2B00ED0FDF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		D3BE9CD41552CF2B00ED0FDF /* Kinvey GeoTag-Info.plist */ = {isa = PBXFileReference; path = "Kinvey GeoTag-Info.plist"; sourceTree = "<group>"; };
+		D3BE9CD41552CF2B00ED0FDF /* Kinvey GeoTag-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Kinvey GeoTag-Info.plist"; sourceTree = "<group>"; };
 		D3BE9CD61552CF2B00ED0FDF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D3BE9CD81552CF2B00ED0FDF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D3BE9CDA1552CF2B00ED0FDF /* Kinvey GeoTag-Prefix.pch */ = {isa = PBXFileReference; path = "Kinvey GeoTag-Prefix.pch"; sourceTree = "<group>"; };
+		D3BE9CDA1552CF2B00ED0FDF /* Kinvey GeoTag-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Kinvey GeoTag-Prefix.pch"; sourceTree = "<group>"; };
 		D3BE9CDB1552CF2B00ED0FDF /* KGAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KGAAppDelegate.h; sourceTree = "<group>"; };
 		D3BE9CDC1552CF2B00ED0FDF /* KGAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KGAAppDelegate.m; sourceTree = "<group>"; };
 		D3BE9CDE1552CF2B00ED0FDF /* KGAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KGAViewController.h; sourceTree = "<group>"; };
@@ -50,8 +66,6 @@
 		D3BE9CE51552CF2B00ED0FDF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/KGAViewController_iPad.xib; sourceTree = "<group>"; };
 		D3BE9CEC1552CF4F00ED0FDF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D3BE9CEE1552D19D00ED0FDF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		D3D803781553178B00656C40 /* KinveyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KinveyKit.framework; sourceTree = "<group>"; };
-		D3D8037B1553186200656C40 /* libUAirship-1.1.1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libUAirship-1.1.1.a"; path = "Airship/libUAirship-1.1.1.a"; sourceTree = "<group>"; };
 		D3D8037D1553193200656C40 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		D3D8037E1553193200656C40 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		D3D8037F1553193200656C40 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -67,6 +81,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27FA77DE161A086000B96FDB /* Accounts.framework in Frameworks */,
+				27FA77DC161A085C00B96FDB /* Twitter.framework in Frameworks */,
 				D3D8038C1553194300656C40 /* libsqlite3.dylib in Frameworks */,
 				D3D8038A1553193E00656C40 /* libz.dylib in Frameworks */,
 				D3D803831553193200656C40 /* CFNetwork.framework in Frameworks */,
@@ -77,11 +93,11 @@
 				D3D803881553193200656C40 /* SystemConfiguration.framework in Frameworks */,
 				D3BE9CD11552CF2B00ED0FDF /* CoreGraphics.framework in Frameworks */,
 				D3BE9CCD1552CF2B00ED0FDF /* UIKit.framework in Frameworks */,
-				D3D8037C1553186200656C40 /* libUAirship-1.1.1.a in Frameworks */,
 				D3BE9CEF1552D19D00ED0FDF /* MapKit.framework in Frameworks */,
 				D3BE9CED1552CF4F00ED0FDF /* CoreLocation.framework in Frameworks */,
 				D3BE9CCF1552CF2B00ED0FDF /* Foundation.framework in Frameworks */,
-				D3D803791553178B00656C40 /* KinveyKit.framework in Frameworks */,
+				27FA77D8161A05C700B96FDB /* libUAirship-1.3.3.a in Frameworks */,
+				27FA77DA161A05D300B96FDB /* KinveyKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +124,10 @@
 		D3BE9CCB1552CF2B00ED0FDF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				27FA77D9161A05D300B96FDB /* KinveyKit.framework */,
+				27FA77D7161A05C700B96FDB /* libUAirship-1.3.3.a */,
+				27FA77DD161A086000B96FDB /* Accounts.framework */,
+				27FA77DB161A085C00B96FDB /* Twitter.framework */,
 				D3D8038B1553194300656C40 /* libsqlite3.dylib */,
 				D3D803891553193E00656C40 /* libz.dylib */,
 				D3D8037D1553193200656C40 /* CFNetwork.framework */,
@@ -116,8 +136,6 @@
 				D3D803801553193200656C40 /* Security.framework */,
 				D3D803811553193200656C40 /* StoreKit.framework */,
 				D3D803821553193200656C40 /* SystemConfiguration.framework */,
-				D3D8037B1553186200656C40 /* libUAirship-1.1.1.a */,
-				D3D803781553178B00656C40 /* KinveyKit.framework */,
 				D3BE9CEE1552D19D00ED0FDF /* MapKit.framework */,
 				D3BE9CEC1552CF4F00ED0FDF /* CoreLocation.framework */,
 				D3BE9CCC1552CF2B00ED0FDF /* UIKit.framework */,
@@ -150,6 +168,11 @@
 				D3BE9CD51552CF2B00ED0FDF /* InfoPlist.strings */,
 				D3BE9CD81552CF2B00ED0FDF /* main.m */,
 				D3BE9CDA1552CF2B00ED0FDF /* Kinvey GeoTag-Prefix.pch */,
+				27FA77E3161A12FE00B96FDB /* Default.png */,
+				27FA77E6161A152C00B96FDB /* Default@2x.png */,
+				27FA77E5161A152C00B96FDB /* Default-568h@2x.png */,
+				27FA77EB161A173200B96FDB /* Icon.png */,
+				27FA77EF161A17A400B96FDB /* Icon@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -208,6 +231,11 @@
 				D3BE9CD71552CF2B00ED0FDF /* InfoPlist.strings in Resources */,
 				D3BE9CE31552CF2B00ED0FDF /* KGAViewController_iPhone.xib in Resources */,
 				D3BE9CE61552CF2B00ED0FDF /* KGAViewController_iPad.xib in Resources */,
+				27FA77E4161A12FE00B96FDB /* Default.png in Resources */,
+				27FA77E7161A152C00B96FDB /* Default-568h@2x.png in Resources */,
+				27FA77E8161A152C00B96FDB /* Default@2x.png in Resources */,
+				27FA77EC161A173200B96FDB /* Icon.png in Resources */,
+				27FA77F0161A17A400B96FDB /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

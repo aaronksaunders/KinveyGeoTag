@@ -22,7 +22,7 @@
     // Override point for customization after application launch.
     
     // Initialize Kinvey for our key/secret
-    [[KCSClient sharedClient] initializeKinveyServiceForAppKey:@"app-key" withAppSecret:@"app-secret" usingOptions:nil];
+    (void) [[KCSClient sharedClient] initializeKinveyServiceForAppKey:@"<#APP KEY#>" withAppSecret:@"<#APP SECRET#>" usingOptions:nil];
     
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         self.viewController = [[KGAViewController alloc] initWithNibName:@"KGAViewController_iPhone" bundle:nil];
