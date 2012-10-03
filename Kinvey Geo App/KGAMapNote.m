@@ -81,7 +81,7 @@ enum {
         mapping = [NSDictionary dictionaryWithObjectsAndKeys:
                    @"_id", @"noteId",              // noteId maps to _id
                    @"_geoloc", @"coordinateArray", // coordinateArray maps to _geoloc
-                   @"note", @"title",              // title maps to note
+                   @"name", @"title",              // title maps to note
                    @"fullResults", @"fullLocationResults", nil]; // Grab the non-portable results
     }
     

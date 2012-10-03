@@ -163,7 +163,7 @@
     
     // Kinvey: Search for our annotations.  We'll populate the map in the delegate
     //         This works with external data too!
-    [self.mapNotes fetchWithDelegate:self];
+    [self.hotels fetchWithDelegate:self];
 }
 
 #pragma mark -
@@ -247,6 +247,7 @@
                                            otherButtonTitles:nil];
 
     [alert show];
+    NSLog(@"Error: %@, %@, %d", error.localizedDescription, error.localizedFailureReason, error.code);
 
 }
 
@@ -271,6 +272,7 @@
                                           otherButtonTitles:nil];
     
     [alert show];
+    NSLog(@"Error: %@, %@, %d", error.localizedDescription, error.localizedFailureReason, error.code);
 }
 
 
