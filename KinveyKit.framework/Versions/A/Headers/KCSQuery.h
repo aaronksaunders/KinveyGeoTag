@@ -2,16 +2,16 @@
 //  KCSQuery.h
 //  KinveyKit
 //
-//  Created by Brian Wilson on 1/26/12.
-//  Copyright (c) 2012 Kinvey. All rights reserved.
+//  Copyright (c) 2012-2013 Kinvey. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import "KinveyHeaderInfo.h"
 
-typedef enum
+typedef enum : NSInteger
 {
     // NO OP
-    kKCSNOOP = 0,
+    kKCSNOOP = 1,
     
     // Basic operators
     kKCSLessThan = 16,
@@ -47,7 +47,9 @@ typedef enum
     // Internal Operators
     kKCSWithin = 17000,
     kKCSMulti = 17001,
-    kKCSOptions = 17002
+    kKCSOptions = 17002,
+    kKCSExists = 17003,
+    kKCSType = 17004
     
 } KCSQueryConditional;
 
@@ -102,7 +104,7 @@ typedef enum {
  
  @return The created object.
  */
-- (id)initWithField: (NSString *)field inDirection: (KCSSortDirection)direction;
+- (instancetype)initWithField: (NSString *)field inDirection: (KCSSortDirection)direction;
 
 @end
 
@@ -125,7 +127,7 @@ typedef enum {
  @return The object created.
  
  */
-- (id)initWithLimit: (NSInteger)limit;
+- (instancetype)initWithLimit: (NSInteger)limit;
 /*! Obtain a representation suitable for sticking in a query param string
  
  Use this function to obtain a properly escaped URL ready string
@@ -156,7 +158,7 @@ typedef enum {
  @return The newly created object.
  
  */
-- (id)initWithcount: (NSInteger)count;
+- (instancetype)initWithcount: (NSInteger)count;
 /*! Obtain a representation suitable for sticking in a query param string
  
  Use this function to obtain a properly escaped URL ready string
@@ -236,7 +238,7 @@ typedef enum {
  @return The new KCSQuery object (autoreleased).
  
  */
-+ (KCSQuery *)queryOnField:(NSString *)field withExactMatchForValue: (NSObject *)value; // Accepts Regular Expressions
++ (KCSQuery *)queryOnField:(NSString *)field withExactMatchForValue: (NSObject *)value;
 
 /*! Query a field for multiple values (AND).
  
@@ -279,25 +281,48 @@ typedef enum {
  */
 + (KCSQuery *)queryNegatingQuery:(KCSQuery *)query;
 
-/*! Create a new query looking for a nil value in a field.
+/*! Create a new query looking for an unset value in a field.
  
- This filters all entries that match 'nil'
+ This filters all entries that do not have a value set for the field. I.e. loaded classes will have 'nil' set for that property.
  
  @param field The field in Kinvey to query on.
 
  @return The new KCSQuery object (autoreleased).
+ @deprecated This method is ambiguous and is superceeded by the following:
  
+    * To find values that have been set to `null` : [KCSQuery queryOnField:field withExactMatchForValue:[NSNull null]];
+    * To find values that empty or unset: [KCSQuery queryForEmptyValueInField:];
+    * To find either `null` or empty or unset: [KCSQuery queryForEmptyOrNullValueInField:];
+ 
+ @deprecatedIn 1.11.0
+ @see queryForEmptyOrNullValueInField:
+ @see queryForEmptyValueInField:
  */
-+ (KCSQuery *)queryForNilValueInField: (NSString *)field;
++ (KCSQuery *)queryForNilValueInField: (NSString *)field KCS_DEPRECATED(queryForNilValueInField is ambiguous; use exact match on NSNull; queryForEmptyValueInField; or queryForEmptyOrNullValueInField, 1.11.0);
 
-/*! Create a new query.
+/** Create a query that matches entities where the field is empty or unset.
  
- Creates an empty query.
+ @param field the backend field to query.
+ @return an autoreleased KCSQuery object.
+ @since 1.11.0
+ @see queryForEmptyOrNullValueInField:
+ */
++ (KCSQuery*) queryForEmptyValueInField:(NSString*)field;
+
+/** Create a query that matches entities where the field is empty or unset or has been excplicitly set to `null`.
+ 
+ @param field the backend field to query.
+ @return an autoreleased KCSQuery object.
+ @since 1.11.0
+ @see queryForEmptyValueInField:
+ */
++ (KCSQuery*) queryForEmptyOrNullValueInField:(NSString*)field;
+
+/*! Create a new query that matches all entites.
  
  @return The new KCSQuery object (autoreleased).
- 
  */
-+ (KCSQuery *)query;
++ (instancetype)query;
 
 /*! Creates a regular expression query on a field, with options.
  
@@ -312,25 +337,35 @@ typedef enum {
  * `kKCSRegexpAnchorsMatchLines` - Allow ^ and $ to match the start and end of lines.
  
  @param field The field in Kinvey to query on.
- @param expression the regular expression string
- @param options regular expression options
+ @param expression the regular expression string or `NSRegularExpression` object. 
+ @param options regular expression options. This will override any options in a provided `NSRegularExpression` expression.
  @see queryOnField:withRegex:
  @return The new KCSQuery object (autoreleased).
  @since 1.8
  */
-+ (KCSQuery *)queryOnField:(NSString*)field withRegex:(NSString*)expression options:(KCSRegexpQueryOptions)options;
++ (KCSQuery *)queryOnField:(NSString*)field withRegex:(id)expression options:(KCSRegexpQueryOptions)options;
 
 /*! Creates a regular expression query on a field.
  
  This query will return entities where the field values match the regular expression. By default, the match is case-sensitive and new-lines do not match anchors. 
  
  @param field The field in Kinvey to query on.
- @param expression the regular expression string
+ @param expression the regular expression string or `NSRegularExpression` object. If using a NSRegularExpression, this will its options, where available. 
  @see queryOnField:withRegex:options:
  @return The new KCSQuery object (autoreleased).
  @since 1.8
  */
-+ (KCSQuery *)queryOnField:(NSString*)field withRegex:(NSString*)expression;
++ (KCSQuery *)queryOnField:(NSString*)field withRegex:(id)expression;
+
+/*! Copy factory
+ 
+ This creates a new `KCSQuery` with the same values as the old input one. 
+ 
+ @param query the query to copy
+ @return a new KCSQuery that matches the old object
+ @since 1.14.0
+ */
++ (KCSQuery *) queryWithQuery:(KCSQuery*) query;
 
 
 ///---------------------------------------------------------------------------------------
@@ -476,11 +511,11 @@ typedef enum {
 /// @name Modifying Queries
 ///---------------------------------------------------------------------------------------
 /*! The current limit modifier, defaults to nil.  Set to nil to clear the limit modifier. */
-@property (nonatomic, retain) KCSQueryLimitModifier *limitModifer;
+@property (nonatomic, strong) KCSQueryLimitModifier *limitModifer;
 /*! The current skip modifier, defaults to nil.  Set to nil to clear the skip modifier. */
-@property (nonatomic, retain) KCSQuerySkipModifier *skipModifier;
+@property (nonatomic, strong) KCSQuerySkipModifier *skipModifier;
 /*! The current list of sort modifiers.  Read only, use addSortModifier: and clearSortModifiers to modify. */
-@property (nonatomic, retain, readonly) NSArray *sortModifiers;
+@property (nonatomic, strong, readonly) NSArray *sortModifiers;
 
 /*! Add a new sort modifier to our list of modifiers.
  

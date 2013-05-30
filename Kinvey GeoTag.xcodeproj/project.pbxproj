@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		27FA77D8161A05C700B96FDB /* libUAirship-1.3.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FA77D7161A05C700B96FDB /* libUAirship-1.3.3.a */; };
+		273B64441756B17900E1B1B9 /* libUAirship-1.4.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 273B64431756B17900E1B1B9 /* libUAirship-1.4.0.a */; };
 		27FA77DA161A05D300B96FDB /* KinveyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FA77D9161A05D300B96FDB /* KinveyKit.framework */; };
 		27FA77DC161A085C00B96FDB /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FA77DB161A085C00B96FDB /* Twitter.framework */; };
 		27FA77DE161A086000B96FDB /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FA77DD161A086000B96FDB /* Accounts.framework */; };
@@ -39,7 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		27FA77D7161A05C700B96FDB /* libUAirship-1.3.3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libUAirship-1.3.3.a"; path = "Airship/libUAirship-1.3.3.a"; sourceTree = "<group>"; };
+		273B64431756B17900E1B1B9 /* libUAirship-1.4.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libUAirship-1.4.0.a"; path = "Airship/libUAirship-1.4.0.a"; sourceTree = "<group>"; };
 		27FA77D9161A05D300B96FDB /* KinveyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KinveyKit.framework; sourceTree = "<group>"; };
 		27FA77DB161A085C00B96FDB /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		27FA77DD161A086000B96FDB /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -96,8 +96,8 @@
 				D3BE9CEF1552D19D00ED0FDF /* MapKit.framework in Frameworks */,
 				D3BE9CED1552CF4F00ED0FDF /* CoreLocation.framework in Frameworks */,
 				D3BE9CCF1552CF2B00ED0FDF /* Foundation.framework in Frameworks */,
-				27FA77D8161A05C700B96FDB /* libUAirship-1.3.3.a in Frameworks */,
 				27FA77DA161A05D300B96FDB /* KinveyKit.framework in Frameworks */,
+				273B64441756B17900E1B1B9 /* libUAirship-1.4.0.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,7 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				27FA77D9161A05D300B96FDB /* KinveyKit.framework */,
-				27FA77D7161A05C700B96FDB /* libUAirship-1.3.3.a */,
+				273B64431756B17900E1B1B9 /* libUAirship-1.4.0.a */,
 				27FA77DD161A086000B96FDB /* Accounts.framework */,
 				27FA77DB161A085C00B96FDB /* Twitter.framework */,
 				D3D8038B1553194300656C40 /* libsqlite3.dylib */,
@@ -204,7 +204,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = KGA;
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0460;
 			};
 			buildConfigurationList = D3BE9CC21552CF2B00ED0FDF /* Build configuration list for PBXProject "Kinvey GeoTag" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -289,6 +289,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -306,6 +310,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = "";
 			};
 			name = Debug;
 		};
@@ -315,6 +320,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -327,6 +336,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				WARNING_CFLAGS = "";
 			};
 			name = Release;
 		};

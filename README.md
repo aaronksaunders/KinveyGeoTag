@@ -14,8 +14,5 @@ This has now been updated to take advantage of our data providers.
 
 To enable Data Integration with this app, just
 
-* Create a new collection ![Create New Collection](https://github.com/KinveyApps/KinveyGeoTag/raw/master/Screenshots/Create.png "Create Collection")
-* Name it "hotels" and enable Data Integration ![Enable Data Integration](https://github.com/KinveyApps/KinveyGeoTag/raw/master/Screenshots/Enable.png "Enable Data Integration")
-* Select Location from available choices ![Select Location](https://github.com/KinveyApps/KinveyGeoTag/raw/master/Screenshots/DataIntegration.png "Create Collection")
-* Select a provider (for example Foursquare) ![Select Foursquare](https://github.com/KinveyApps/KinveyGeoTag/raw/master/Screenshots/Location.png "Select Foursquare")
-* Enter your credentials, hit `update` and verify collection is `Active` ![Enter Credentials](https://github.com/KinveyApps/KinveyGeoTag/raw/master/Screenshots/Active.png "Enter Credentials")
+* Go to the **Locations** Add-On and select a provider. For example, choose "FourSquare" ![Enable Data Integration](https://github.com/KinveyApps/GeoTag-iOS/raw/master/Screenshots/Enable.png "Enable Data Integration")
+* Name the endpoint `hotels` and enter your foursquare credentials. Then press `Create Configuration`. ![Enter Credentials](https://github.com/KinveyApps/GeoTag-iOS/raw/master/Screenshots/Active.png "Enter Credentials")

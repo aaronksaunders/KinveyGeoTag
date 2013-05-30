@@ -2,8 +2,21 @@
 //  KGAAppDelegate.m
 //  Kinvey Geo App
 //
+//  Copyright 2012-2013 Kinvey, Inc
+//
+//  Licensed under the Apache License, Version 2.0 (the "License");
+//  you may not use this file except in compliance with the License.
+//  You may obtain a copy of the License at
+//
+//  http://www.apache.org/licenses/LICENSE-2.0
+//
+//  Unless required by applicable law or agreed to in writing, software
+//  distributed under the License is distributed on an "AS IS" BASIS,
+//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//  See the License for the specific language governing permissions and
+//  limitations under the License.
+//
 //  Created by Brian Wilson on 5/3/12.
-//  Copyright (c) 2012 Kinvey. See LICENSE for license information.
 //
 
 #import "KGAAppDelegate.h"
@@ -13,17 +26,16 @@
 
 @implementation KGAAppDelegate
 
-@synthesize window = _window;
-@synthesize viewController = _viewController;
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    
+
     // Initialize Kinvey for our key/secret
-    (void) [[KCSClient sharedClient] initializeKinveyServiceForAppKey:@"<#APP KEY#>" withAppSecret:@"<#APP SECRET#>" usingOptions:nil];
-    
+    (void) [[KCSClient sharedClient] initializeKinveyServiceForAppKey:@"<#APP KEY#>"
+                                                        withAppSecret:@"<#APP SECRET#>"
+                                                         usingOptions:nil];
+
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         self.viewController = [[KGAViewController alloc] initWithNibName:@"KGAViewController_iPhone" bundle:nil];
     } else {
@@ -42,7 +54,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
