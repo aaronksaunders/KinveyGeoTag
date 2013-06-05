@@ -54,9 +54,7 @@
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0., 240., 320., 240.)];
     
     self.view.backgroundColor = [UIColor scrollViewTexturedBackgroundColor];
-//    self.tableView.frame = CGRectMake(0., 240., 320., 240.);
     [self.view addSubview:self.tableView];
-//    self.tableView.contentInset = UIEdgeInsetsMake(240., 0., 0., 0.);
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.backgroundColor = [UIColor whiteColor];
@@ -69,12 +67,6 @@
 
     self.tableView.tableHeaderView = label;
     self.tableView.clipsToBounds = YES;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source

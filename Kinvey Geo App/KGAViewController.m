@@ -132,10 +132,6 @@
         // Reset the display
         self.locationNoteField.text = @"";
         
-        // We've found our location, so we can stop searching
-        //TODO:
-        //    [self.locationManager stopUpdatingLocation];
-        
         // KINVEY: Save this note to Kinvey
         [_mapStore saveObject:note withCompletionBlock:^(NSArray *objectsOrNil, NSError *errorOrNil) {
             [self.activityIndicator stopAnimating];
