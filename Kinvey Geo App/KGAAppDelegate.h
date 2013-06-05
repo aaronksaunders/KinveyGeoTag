@@ -1,6 +1,6 @@
 //
 //  KGAAppDelegate.h
-//  Kinvey Geo App
+//  Kinvey GeoTag
 //
 //  Copyright 2012-2013 Kinvey, Inc
 //
@@ -24,7 +24,5 @@
 @interface KGAAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
-@property (strong, nonatomic) KGAViewController *viewController;
 
 @end

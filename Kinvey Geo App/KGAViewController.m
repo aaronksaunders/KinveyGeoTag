@@ -1,6 +1,6 @@
 //
 //  KGAViewController.m
-//  Kinvey Geo App
+//  Kinvey GeoTag
 //
 //  Copyright 2012-2013 Kinvey, Inc
 //
@@ -21,6 +21,8 @@
 
 #import "KGAViewController.h"
 #import "KGAMapNote.h"
+
+#import "KGATagListViewController.h"
 
 #import <KinveyKit/KinveyKit.h>
 
@@ -67,7 +69,7 @@
     [super viewWillAppear:animated];
     // Make the map show our location
     [self.worldView setShowsUserLocation:YES];
-
+    [self findLocation];
 }
 
 - (void)viewDidUnload
@@ -86,8 +88,8 @@
 }
 
 // This is linked to the refresh button
-- (IBAction)refreshPlaces:(id)sender {
-
+- (IBAction)refreshPlaces
+{
     // Remove all annotations at this time, since we're going to redraw them
     [self.worldView removeAnnotations:self.worldView.annotations];
     
@@ -97,54 +99,70 @@
 
 - (void)findLocation
 {
-    // Find the current location
-    [self.locationManager startUpdatingLocation];
-    
-    // Indicate that we're searching for your location
-    [self.activityIndicator startAnimating];
-    
-    // Hide the text input field
-    [self.locationNoteField setHidden:YES];
+    if ([CLLocationManager locationServicesEnabled]) {
+        // Find the current location
+        [self.locationManager startMonitoringSignificantLocationChanges];
+        
+        // Indicate that we're searching for your location
+        [self.activityIndicator startAnimating];
+        
+        // Hide the text input field
+        [self.locationNoteField setHidden:YES];
+    }
+}
+- (void) markLocation
+{
+    if ([self.locationNoteField.text isEqualToString:@""] == NO) {
+
+        CLLocation* location = [_locationManager location];
+        // Get the location that was found
+        CLLocationCoordinate2D coord = [location coordinate];
+        
+        // Create a new note with the text from the text field
+        KGAMapNote *note = [[KGAMapNote alloc] initWithLocation:location title:self.locationNoteField.text];
+        
+        // Add the annotation (we do this here so that we don't have to wait for it to be downloaded from
+        // Kinvey before we display it
+        [self.worldView addAnnotation:note];
+        
+        // Bring the map view back to where we're dropping the note
+        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coord, ONE_KILOMETER, ONE_KILOMETER);
+        [self.worldView setRegion:region animated:YES];
+        
+        // Reset the display
+        self.locationNoteField.text = @"";
+        
+        // We've found our location, so we can stop searching
+        //TODO:
+        //    [self.locationManager stopUpdatingLocation];
+        
+        // KINVEY: Save this note to Kinvey
+        [_mapStore saveObject:note withCompletionBlock:^(NSArray *objectsOrNil, NSError *errorOrNil) {
+            [self.activityIndicator stopAnimating];
+            if (errorOrNil != nil) {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Unable to Save Note"
+                                                                message:errorOrNil.localizedDescription
+                                                               delegate:self
+                                                      cancelButtonTitle:@"Ok"
+                                                      otherButtonTitles:nil];
+                
+                [alert show];
+                NSLog(@"Error: %@, %@, %d", errorOrNil.localizedDescription, errorOrNil.localizedFailureReason, errorOrNil.code);
+            }
+        } withProgressBlock:nil];
+    }
 }
 
 // Called when the location is found
 - (void)foundLocation:(CLLocation *)location
 {
-    // Get the location that was found
-    CLLocationCoordinate2D coord = [location coordinate];
-    
-    // Create a new note with the text from the text field
-    KGAMapNote *note = [[KGAMapNote alloc] initWithLocation:location title:self.locationNoteField.text];
-    
-    // Add the annotation (we do this here so that we don't have to wait for it to be downloaded from
-    // Kinvey before we display it
-    [self.worldView addAnnotation:note];
-    
-    // Bring the map view back to where we're dropping the note
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coord, ONE_KILOMETER, ONE_KILOMETER);
-    [self.worldView setRegion:region animated:YES];
-    
-    // Reset the display 
-    self.locationNoteField.text = @"";
     self.locationNoteField.hidden = NO;
-    
-    // We've found our location, so we can stop searching
-    [self.locationManager stopUpdatingLocation];
-    
-    // KINVEY: Save this note to Kinvey
-    [_mapStore saveObject:note withCompletionBlock:^(NSArray *objectsOrNil, NSError *errorOrNil) {
-        [self.activityIndicator stopAnimating];
-        if (errorOrNil != nil) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Unable to Save Note"
-                                                            message:errorOrNil.localizedDescription
-                                                           delegate:self
-                                                  cancelButtonTitle:@"Ok"
-                                                  otherButtonTitles:nil];
-            
-            [alert show];
-            NSLog(@"Error: %@, %@, %d", errorOrNil.localizedDescription, errorOrNil.localizedFailureReason, errorOrNil.code);
-        }
-    } withProgressBlock:nil];
+
+    [[KCSUser activeUser] setValue:location forAttribute:KCSEntityKeyGeolocation];
+    [[KCSUser activeUser] saveWithCompletionBlock:^(NSArray *objectsOrNil, NSError *errorOrNil) {
+        NSLog(@"saved user: %@ - %@", @(errorOrNil == nil), errorOrNil);
+    }];
+
 }
 
 // Called to update fetch all annotations
@@ -159,7 +177,7 @@
 
     // KINVEY: Build a query against the "_geoloc" collection in your backend
     //         centered at mapCenter, with a distance of distanceInMiles
-    KCSQuery *q = [KCSQuery queryOnField:@"_geoloc"
+    KCSQuery *locQuery = [KCSQuery queryOnField:@"_geoloc"
                usingConditionalsForValues:
                     kKCSNearSphere,
                     [NSArray arrayWithObjects:
@@ -170,34 +188,40 @@
 
     // Kinvey: Set the query to our built query
     // Kinvey: Search for our annotations.  We'll populate the map in the delegate
-
-    [_hotelStore queryWithQuery:q withCompletionBlock:^(NSArray *objectsOrNil, NSError *errorOrNil) {
-        [self.activityIndicator stopAnimating];
-        if (errorOrNil == nil) {
-            // Add all the returned annotations to the map
-            [self.worldView addAnnotations:objectsOrNil];
-        } else {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Unable to Get Notes"
-                                                            message:errorOrNil.localizedDescription
-                                                           delegate:self
-                                                  cancelButtonTitle:@"Ok"
-                                                  otherButtonTitles:nil];
+    NSArray* userTags = [[KCSUser activeUser] getValueForAttribute:@"tags"];
+    if (userTags) {
+        KCSQuery* tagQuery = [KCSQuery queryWithQuery:locQuery];
+        [tagQuery addQuery:[KCSQuery queryOnField:@"tags" usingConditional:kKCSIn forValue:userTags]];
+        [_mapStore queryWithQuery:tagQuery withCompletionBlock:^(NSArray *objectsOrNil, NSError *errorOrNil) {
+            [self.activityIndicator stopAnimating];
+            if (errorOrNil == nil) {
+                // Add all the returned annotations to the map
+                [self.worldView addAnnotations:objectsOrNil];
+            } else {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Unable to Get Notes"
+                                                                message:errorOrNil.localizedDescription
+                                                               delegate:self
+                                                      cancelButtonTitle:@"Ok"
+                                                      otherButtonTitles:nil];
+                
+                [alert show];
+                NSLog(@"Error: %@, %@, %d", errorOrNil.localizedDescription, errorOrNil.localizedFailureReason, errorOrNil.code);
+            }
             
-            [alert show];
-            NSLog(@"Error: %@, %@, %d", errorOrNil.localizedDescription, errorOrNil.localizedFailureReason, errorOrNil.code);
-        }
-    } withProgressBlock:nil];
-    
+        } withProgressBlock:nil];
+
+    }
     
     // Kinvey: External place data
     //         Add a filter for hotel
-    [_hotelStore queryWithQuery:q withCompletionBlock:^(NSArray *objectsOrNil, NSError *errorOrNil) {
+    [locQuery addQueryOnField:@"keyword" withExactMatchForValue:@"hotel"];
+    [_hotelStore queryWithQuery:locQuery withCompletionBlock:^(NSArray *objectsOrNil, NSError *errorOrNil) {
         [self.activityIndicator stopAnimating];
         if (errorOrNil == nil) {
             // Add all the returned annotations to the map
             [self.worldView addAnnotations:objectsOrNil];
         } else {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Unable to Get Notes"
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Unable to Get Nearby Hotels"
                                                             message:errorOrNil.localizedDescription
                                                            delegate:self
                                                   cancelButtonTitle:@"Ok"
@@ -226,10 +250,29 @@
     [self foundLocation:newLocation];
 }
 
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    // Start our processing for the location
+    [self foundLocation:manager.location];
+}
+
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
     // Just log it for now.
     NSLog(@"Location manager failed with error: %@", error);
+    if ([error.domain isEqualToString:kCLErrorDomain] && error.code == kCLErrorDenied) {
+        //user denied location services so stop updating manager
+        [manager stopUpdatingLocation];
+        
+        //respect user privacy and remove stored location
+        CLLocation* currentLocation = [[KCSUser activeUser] getValueForAttribute:KCSEntityKeyGeolocation];
+        if (currentLocation != nil) {
+            [[KCSUser activeUser] removeValueForAttribute:KCSEntityKeyGeolocation];
+            [[KCSUser activeUser] saveWithCompletionBlock:^(NSArray *objectsOrNil, NSError *errorOrNil) {
+                NSLog(@"saved user: %@ - %@", @(errorOrNil == nil), errorOrNil);
+            }];
+        }
+    }
 }
 
 #pragma mark - MKMapView Delegate
@@ -256,13 +299,26 @@
     // The user hit the "Done" key, so
 
     // Find the current location and mark the note
-    [self findLocation];
+    [self markLocation];
     
     // Remove the keyboard and stop responding to non-touch events
     [textField resignFirstResponder];
     
     // Indicate that we're done
     return YES;
+}
+
+#pragma mark - TagViewer
+- (IBAction)showTags:(id)sender {
+    [KCSCustomEndpoints callEndpoint:@"tagsNearMe" params:nil completionBlock:^(id results, NSError *error) {
+        if (results) {
+            UIViewController* vc = [[KGATagListViewController alloc] initWithTags:[results allKeys]];
+            vc.modalTransitionStyle = UIModalTransitionStylePartialCurl;
+            [self presentModalViewController:vc animated:YES];
+        } else {
+            //TODO: handle error
+        }
+    }];
 }
 
 @end

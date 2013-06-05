@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		273B64441756B17900E1B1B9 /* libUAirship-1.4.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 273B64431756B17900E1B1B9 /* libUAirship-1.4.0.a */; };
+		273B644C1757CE4100E1B1B9 /* KCSHashtags.m in Sources */ = {isa = PBXBuildFile; fileRef = 273B644B1757CE4100E1B1B9 /* KCSHashtags.m */; };
+		273B64A31758C7A700E1B1B9 /* KGATagListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 273B64A21758C7A700E1B1B9 /* KGATagListViewController.m */; };
 		27FA77DA161A05D300B96FDB /* KinveyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FA77D9161A05D300B96FDB /* KinveyKit.framework */; };
 		27FA77DC161A085C00B96FDB /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FA77DB161A085C00B96FDB /* Twitter.framework */; };
 		27FA77DE161A086000B96FDB /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FA77DD161A086000B96FDB /* Accounts.framework */; };
@@ -40,6 +42,10 @@
 
 /* Begin PBXFileReference section */
 		273B64431756B17900E1B1B9 /* libUAirship-1.4.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libUAirship-1.4.0.a"; path = "Airship/libUAirship-1.4.0.a"; sourceTree = "<group>"; };
+		273B644A1757CE4100E1B1B9 /* KCSHashtags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCSHashtags.h; sourceTree = "<group>"; };
+		273B644B1757CE4100E1B1B9 /* KCSHashtags.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCSHashtags.m; sourceTree = "<group>"; };
+		273B64A11758C7A700E1B1B9 /* KGATagListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGATagListViewController.h; sourceTree = "<group>"; };
+		273B64A21758C7A700E1B1B9 /* KGATagListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGATagListViewController.m; sourceTree = "<group>"; };
 		27FA77D9161A05D300B96FDB /* KinveyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KinveyKit.framework; sourceTree = "<group>"; };
 		27FA77DB161A085C00B96FDB /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		27FA77DD161A086000B96FDB /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -156,6 +162,10 @@
 				D356673915530215009D3DF8 /* KGAMapNote.m */,
 				D3BE9CE11552CF2B00ED0FDF /* KGAViewController_iPhone.xib */,
 				D3BE9CE41552CF2B00ED0FDF /* KGAViewController_iPad.xib */,
+				273B64A11758C7A700E1B1B9 /* KGATagListViewController.h */,
+				273B64A21758C7A700E1B1B9 /* KGATagListViewController.m */,
+				273B644A1757CE4100E1B1B9 /* KCSHashtags.h */,
+				273B644B1757CE4100E1B1B9 /* KCSHashtags.m */,
 				D3BE9CD31552CF2B00ED0FDF /* Supporting Files */,
 			);
 			path = "Kinvey Geo App";
@@ -250,6 +260,8 @@
 				D3BE9CDD1552CF2B00ED0FDF /* KGAAppDelegate.m in Sources */,
 				D3BE9CE01552CF2B00ED0FDF /* KGAViewController.m in Sources */,
 				D356673A15530215009D3DF8 /* KGAMapNote.m in Sources */,
+				273B644C1757CE4100E1B1B9 /* KCSHashtags.m in Sources */,
+				273B64A31758C7A700E1B1B9 /* KGATagListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +305,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Michael Katz (5WT935WCFL)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -308,6 +321,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PROVISIONING_PROFILE = "016306C0-A0E4-4E56-8B50-E9AF465E4680";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WARNING_CFLAGS = "";
@@ -324,6 +338,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Michael Katz (5WT935WCFL)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -333,6 +348,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "016306C0-A0E4-4E56-8B50-E9AF465E4680";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

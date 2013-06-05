@@ -1,6 +1,6 @@
 //
 //  KGAMapNote.h
-//  Kinvey Geo App
+//  Kinvey GeoTag
 //
 //  Copyright 2012-2013 Kinvey, Inc
 //
@@ -32,6 +32,7 @@
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
 @property (nonatomic, strong) CLLocation* location;
 @property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSArray* tags;
 
 // This iVar holds the complete results from the location provider
 // (if not from Kinvey).  This is non-portable between location providers, but

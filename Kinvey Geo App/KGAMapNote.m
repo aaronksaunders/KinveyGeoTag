@@ -1,6 +1,6 @@
 //
 //  KGAMapNote.m
-//  Kinvey Geo App
+//  Kinvey GeoTag
 //
 //  Copyright 2012-2013 Kinvey, Inc
 //
@@ -20,6 +20,8 @@
 //
 
 #import "KGAMapNote.h"
+
+#import "KCSHashtags.h"
 
 // Private interface that holds our id and coordinate array
 // these are only used internally
@@ -45,6 +47,7 @@
         _noteId = nil;
         _location = location;
         _title = title;
+        _tags = [KCSHashtags tagsFromString:title];
     }
     return self;
 }
@@ -67,7 +70,8 @@
         mapping = @{@"noteId"              : KCSEntityKeyId,          // noteId maps to _id
                     @"location"            : KCSEntityKeyGeolocation, // coordinates maps to _geoloc
                     @"title"               : @"name",                 // title maps to note
-                    @"fullLocationResults" : @"fullResults"};         // Grab the non-portable results
+                    @"fullLocationResults" : @"fullResults",          // Grab the non-portable results
+                    @"tags"                : @"tags"};                // the hashtags
     }
     
     return mapping;

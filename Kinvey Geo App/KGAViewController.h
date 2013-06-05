@@ -1,6 +1,6 @@
 //
 //  KGAViewController.h
-//  Kinvey Geo App
+//  Kinvey GeoTag
 //
 //  Copyright 2012-2013 Kinvey, Inc
 //
@@ -31,7 +31,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *locationNoteField;
 
 
-- (IBAction)refreshPlaces:(id)sender;
+- (IBAction)refreshPlaces;
 
 
 - (void)findLocation;
