@@ -48,5 +48,11 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+	</array>
+	<key>NSLocationUsageDescription</key>
+	<string>Location used for setting and finding annotations.</string>
 </dict>
 </plist>

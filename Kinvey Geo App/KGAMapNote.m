@@ -42,7 +42,7 @@
 
 - (id)initWithLocation:(CLLocation*)location title:(NSString *)title
 {
-    self = [super self];
+    self = [super init];
     if (self){
         _noteId = nil;
         _location = location;

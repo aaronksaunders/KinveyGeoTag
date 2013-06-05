@@ -248,8 +248,9 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
-    // Start our processing for the location
-    [self foundLocation:manager.location];
+    // locations contains an array of recent locations, but this app only cares about the most recent
+    // which is also "manager.location"
+    [self foundLocation:manager.location]; // update the user object in this method
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
