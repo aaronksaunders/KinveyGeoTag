@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2717F20F17A0679C0026D3CF /* KinveyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2717F20E17A0679C0026D3CF /* KinveyKit.framework */; };
 		273B64441756B17900E1B1B9 /* libUAirship-1.4.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 273B64431756B17900E1B1B9 /* libUAirship-1.4.0.a */; };
 		273B644C1757CE4100E1B1B9 /* KCSHashtags.m in Sources */ = {isa = PBXBuildFile; fileRef = 273B644B1757CE4100E1B1B9 /* KCSHashtags.m */; };
 		273B64A31758C7A700E1B1B9 /* KGATagListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 273B64A21758C7A700E1B1B9 /* KGATagListViewController.m */; };
-		27FA77DA161A05D300B96FDB /* KinveyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FA77D9161A05D300B96FDB /* KinveyKit.framework */; };
 		27FA77DC161A085C00B96FDB /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FA77DB161A085C00B96FDB /* Twitter.framework */; };
 		27FA77DE161A086000B96FDB /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FA77DD161A086000B96FDB /* Accounts.framework */; };
 		27FA77E4161A12FE00B96FDB /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 27FA77E3161A12FE00B96FDB /* Default.png */; };
@@ -41,12 +41,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2717F20E17A0679C0026D3CF /* KinveyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KinveyKit.framework; path = Kinvey/KinveyKit.framework; sourceTree = "<group>"; };
 		273B64431756B17900E1B1B9 /* libUAirship-1.4.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libUAirship-1.4.0.a"; path = "Airship/libUAirship-1.4.0.a"; sourceTree = "<group>"; };
 		273B644A1757CE4100E1B1B9 /* KCSHashtags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCSHashtags.h; sourceTree = "<group>"; };
 		273B644B1757CE4100E1B1B9 /* KCSHashtags.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCSHashtags.m; sourceTree = "<group>"; };
 		273B64A11758C7A700E1B1B9 /* KGATagListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGATagListViewController.h; sourceTree = "<group>"; };
 		273B64A21758C7A700E1B1B9 /* KGATagListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGATagListViewController.m; sourceTree = "<group>"; };
-		27FA77D9161A05D300B96FDB /* KinveyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KinveyKit.framework; sourceTree = "<group>"; };
 		27FA77DB161A085C00B96FDB /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		27FA77DD161A086000B96FDB /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		27FA77E3161A12FE00B96FDB /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -94,6 +94,7 @@
 				D3D803831553193200656C40 /* CFNetwork.framework in Frameworks */,
 				D3D803841553193200656C40 /* CoreTelephony.framework in Frameworks */,
 				D3D803851553193200656C40 /* MobileCoreServices.framework in Frameworks */,
+				2717F20F17A0679C0026D3CF /* KinveyKit.framework in Frameworks */,
 				D3D803861553193200656C40 /* Security.framework in Frameworks */,
 				D3D803871553193200656C40 /* StoreKit.framework in Frameworks */,
 				D3D803881553193200656C40 /* SystemConfiguration.framework in Frameworks */,
@@ -102,7 +103,6 @@
 				D3BE9CEF1552D19D00ED0FDF /* MapKit.framework in Frameworks */,
 				D3BE9CED1552CF4F00ED0FDF /* CoreLocation.framework in Frameworks */,
 				D3BE9CCF1552CF2B00ED0FDF /* Foundation.framework in Frameworks */,
-				27FA77DA161A05D300B96FDB /* KinveyKit.framework in Frameworks */,
 				273B64441756B17900E1B1B9 /* libUAirship-1.4.0.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -130,7 +130,7 @@
 		D3BE9CCB1552CF2B00ED0FDF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				27FA77D9161A05D300B96FDB /* KinveyKit.framework */,
+				2717F20E17A0679C0026D3CF /* KinveyKit.framework */,
 				273B64431756B17900E1B1B9 /* libUAirship-1.4.0.a */,
 				27FA77DD161A086000B96FDB /* Accounts.framework */,
 				27FA77DB161A085C00B96FDB /* Twitter.framework */,
@@ -361,7 +361,8 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"$(SRCROOT)",
+					"$(SRCROOT)/Kinvey",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Kinvey Geo App/Kinvey GeoTag-Prefix.pch";
@@ -381,7 +382,8 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"$(SRCROOT)",
+					"$(SRCROOT)/Kinvey",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Kinvey Geo App/Kinvey GeoTag-Prefix.pch";
