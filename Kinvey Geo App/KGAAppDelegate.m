@@ -1,9 +1,22 @@
 //
 //  KGAAppDelegate.m
-//  Kinvey Geo App
+//  Kinvey GeoTag
+//
+//  Copyright 2012-2013 Kinvey, Inc
+//
+//  Licensed under the Apache License, Version 2.0 (the "License");
+//  you may not use this file except in compliance with the License.
+//  You may obtain a copy of the License at
+//
+//  http://www.apache.org/licenses/LICENSE-2.0
+//
+//  Unless required by applicable law or agreed to in writing, software
+//  distributed under the License is distributed on an "AS IS" BASIS,
+//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//  See the License for the specific language governing permissions and
+//  limitations under the License.
 //
 //  Created by Brian Wilson on 5/3/12.
-//  Copyright (c) 2012 Kinvey. See LICENSE for license information.
 //
 
 #import "KGAAppDelegate.h"
@@ -11,19 +24,27 @@
 #import "KGAViewController.h"
 #import <KinveyKit/KinveyKit.h>
 
-@implementation KGAAppDelegate
+@interface KGAAppDelegate ()
+@property (strong, nonatomic) KGAViewController *viewController;
+@end
 
-@synthesize window = _window;
-@synthesize viewController = _viewController;
+@implementation KGAAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    
+
     // Initialize Kinvey for our key/secret
-    [[KCSClient sharedClient] initializeKinveyServiceForAppKey:@"app-key" withAppSecret:@"app-secret" usingOptions:nil];
-    
+    (void) [[KCSClient sharedClient] initializeKinveyServiceForAppKey:@"<#APP KEY#>"
+                                                        withAppSecret:@"<#APP SECRET#>"
+                                                         usingOptions:nil];
+
+    [KCSPush initializePushWithPushKey:@"<#PUSH KEY#>"
+                            pushSecret:@"<#PUSH SECRET#>"
+                                  mode:KCS_PUSHMODE_DEVELOPMENT
+                               enabled:YES];
+
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         self.viewController = [[KGAViewController alloc] initWithNibName:@"KGAViewController_iPhone" bundle:nil];
     } else {
@@ -34,31 +55,36 @@
     return YES;
 }
 
-- (void)applicationWillResignActive:(UIApplication *)application
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+    [[KCSPush sharedPush] application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+    // Additional registration goes here (if needed)
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application
+- (void) application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    [[KCSPush sharedPush] application:application didFailToRegisterForRemoteNotificationsWithError:error];
 }
 
-- (void)applicationWillEnterForeground:(UIApplication *)application
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [[KCSPush sharedPush] application:application didReceiveRemoteNotification:userInfo];
+    [[[UIAlertView alloc] initWithTitle:@"Received a Push"
+                                message:userInfo[@"aps"][@"alert"]
+                               delegate:nil
+                      cancelButtonTitle:@"OK"
+                      otherButtonTitles:nil] show];
+    [self.viewController refreshPlaces];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [[KCSPush sharedPush] onUnloadHelper];
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
+    [[KCSPush sharedPush] registerForRemoteNotifications];
 }
 
 @end
