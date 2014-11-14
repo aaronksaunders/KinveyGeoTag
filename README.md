@@ -2,6 +2,8 @@
 This is a Kinvey sample app, to location-based search, 3rd-Party location services, Push notifications, and Business Logic with Collection Hooks and Custom Endpoints. 
 
 In particular in addition to showing location-based data, this app allows user actions to trigger push notifications to other users that are near new notes and are interested in certain tags. 
+![](https://github.com/KinveyApps/GeoTag-iOS/raw/UpdateSample_1_27/Screenshots/GeoTag_ss1.png)
+![](https://github.com/KinveyApps/GeoTag-iOS/raw/UpdateSample_1_27/Screenshots/GeoTag_ss2.png)
 
 For more details about location, see the blog post at http://goo.gl/9dyMm.
 For more details about business logic, see http://devcenter.kinvey.com/ios/guides/business-logic.
@@ -129,6 +131,17 @@ This code does the following:
 
 __NOTE:__ it is important to `complete()` the response in all terminal branches, or the client will timeout waiting for a response. 
 
+####Client usage
+```
+[KCSCustomEndpoints callEndpoint:@"tagsNearMe" params:nil completionBlock:^(id results, NSError *error) {
+    if (results) {
+        //TODO: custom logics
+    } else {
+        //TODO: handle error
+    }
+}];
+```
+
 ## System Requirements
 * Xcode 4.5+
 * iPad/iPhone/iPod Touch
@@ -142,7 +155,7 @@ Support: [support@kinvey.com](http://docs.kinvey.com/mailto:support@kinvey.com)
 
 ## License
 
-Copyright (c) 2013 Kinvey, Inc.
+Copyright (c) 2014 Kinvey, Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
